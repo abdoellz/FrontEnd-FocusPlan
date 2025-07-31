@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Offside&display=swap');
+
+/* Import Tailwind dan DaisyUI */
 @import "tailwindcss";
 @plugin "daisyui";
 
-body {
-  font-family: 'Poppins', sans-serif;
-  @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Offside&display=swap');
+/* Set font default di body */
 
+
+/* Kelas tambahan khusus */
+.font-title {
+  font-family: 'Michroma', sans-serif;
+}
+
+body {
+  font-family: 'Michroma', sans-serif;
+}
+
+.font-body {
+  font-family: 'Offside', sans-serif;
 }

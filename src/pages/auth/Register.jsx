@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthController from "../../controllers/AuthController";
 import Swal from "sweetalert2";
+import Illustration from "/src/assets/image3.svg"; // Pastikan path ini benar
 
 function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -13,7 +14,7 @@ function Register() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleRegiter = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     Swal.fire({
@@ -29,90 +30,106 @@ function Register() {
       Swal.fire({
         icon: "success",
         title: "Berhasil Register",
-        text: "Pendaftaran berhasil silahkan login"
-      }); 
+        text: "Pendaftaran berhasil, silakan login",
+      });
     } catch (err) {
       Swal.fire({
-          icon: "error",
-          title: "Gagal Register",
-          text: err.response?.data?.message || "Pendaftaran gagal, silahkan coba lagi nanti",
+        icon: "error",
+        title: "Gagal Register",
+        text: err.response?.data?.message || "Pendaftaran gagal, silakan coba lagi nanti",
       });
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4">
-      <div className="bg-gray-900 shadow-lg w-5xl grid md:grid-cols-2 grid-cols-1 md:rounded-3xl rounded-xl">
-        <div className="bg-gray-800 rounded-l-3xl hidden md:flex justify-center items-center">
-          <Link to="/" className="text-6xl text-white font-bold">
-            Todobee
-          </Link>
-        </div>
-        <div className="py-15 px-10">
-          <h2 className="font-bold text-white text-center text-4xl">Daftar</h2>
-          <form className="mt-5" onSubmit={handleRegiter}>
-            <div>
-              <label className="text-gray-300">Nama</label>
-              <label className="input validator w-full mt-1">
-                <input
-                  type="text"
-                  placeholder="nama lengkap"
-                  required
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                />
+    <div className="min-h-screen bg-white flex items-center justify-center px-4">
+      <div className="grid md:grid-cols-2 grid-cols-1 bg-white shadow-xl rounded-2xl overflow-hidden max-w-5xl w-full">
+
+        {/* FORM REGISTER */}
+        <div className="bg-orange-50 p-10 flex flex-col justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-500 mb-8">
+            Daftar
+          </h2>
+
+          <form onSubmit={handleRegister} className="space-y-6">
+
+            {/* NAMA LENGKAP */}
+            <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Nama Lengkap :
               </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Nama lengkap"
+                value={form.name}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 text-gray-700"
+              />
             </div>
-            <div className="mt-3">
-              <label className="text-gray-300">Email</label>
-              <label className="input validator w-full mt-1">
-                <input
-                  type="email"
-                  placeholder="mail@site.com"
-                  required
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                />
+
+            {/* EMAIL */}
+            <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Email :
               </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 text-gray-700"
+              />
             </div>
-            <div className="mt-3">
-              <label className="text-gray-300">Password</label>
-              <label className="input validator w-full mt-1">
-                <input
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  minLength={6}
-                  type="password"
-                  placeholder="Password"
-                  required
-                />
+
+            {/* PASSWORD */}
+            <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Password :
               </label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Masukkan password"
+                value={form.password}
+                onChange={handleChange}
+                minLength={6}
+                required
+                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 text-gray-700"
+              />
             </div>
-            {error && (
-              <div className="mt-4">
-                <p className="text-red-600">{error}</p>
-              </div>
-            )}
-            <div className="mt-4">
-              <button
-                type="submit"
-                className="text-white btn hover:bg-yellow-500 bg-yellow-400 w-full"
-              >
-                Daftar
-              </button>
-            </div>
-            <div className="mt-2">
-              <small className="text-gray-300">
-                Sudah punya akun?{" "}
-                <Link to="/login" className="text-yellow-400 hover:text-yellow-500">
-                  Login sekarang
-                </Link>
-              </small>
-            </div>
+
+            {/* ERROR */}
+            {error && <p className="text-red-600 text-sm">{error}</p>}
+
+            {/* BUTTON */}
+            <button
+              type="submit"
+              className="w-full py-2 rounded-md bg-orange-500 hover:bg-orange-600 text-white font-semibold transition duration-300"
+            >
+              Daftar
+            </button>
+
+            {/* LINK TO LOGIN */}
+            <p className="text-sm text-center mt-4 text-gray-700">
+              Sudah punya akun?{" "}
+              <Link to="/login" className="text-blue-600 hover:underline font-medium">
+                Login di sini
+              </Link>
+            </p>
           </form>
+        </div>
+
+        {/* ILUSTRASI */}
+        <div className="bg-white hidden md:flex items-center justify-center p-8">
+          <img
+            src={Illustration}
+            alt="Register Illustration"
+            className="max-w-full h-auto"
+          />
         </div>
       </div>
     </div>

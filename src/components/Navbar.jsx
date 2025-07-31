@@ -9,9 +9,10 @@ function Navbar() {
       <div className="flex items-center justify-between pl-4 pr-6 md:px-24 py-4">
         
         {/* Logo & Title */}
-        <div className="flex items-center gap-2 font-bold text-2xl md:text-3xl">
-          <img src="src/assets/focus.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
-          <span className="text-white">FocusPlan</span>
+        <div className="flex items-center font-bold text-2xl md:text-3xl">
+          <img src="src/assets/fp.png" alt="Logo" className="w-8 h-8 md:w-10 md:h-10" />
+          <span className="text-white">Focus</span>
+          <span className="text-red-700">Plan</span>
         </div>
 
         {/* Navigation & Buttons (Desktop) */}

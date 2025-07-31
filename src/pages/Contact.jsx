@@ -1,83 +1,51 @@
 function Contact() {
   return (
-    <div className="bg-gray-950 min-h-screen">
+    <div className="bg-white min-h-screen">
       <div className="py-40 xl:px-60 px-6">
-      <div className="grid xl:grid-cols-2 grid-cols-1 xl:space-x-20">
-        <div className="mb-3 xl:mb-0">
-          <img
-            src="/src/assets/top-view-arrangement-with-calendar-pencils.jpg"
-            data-aos="fade-up"
-            className="rounded-md shadow-lg"
-            alt=""
-          />
-        </div>
-        <div className="flex flex-col justify-center">
-          <h1
-            className="font-bold xl:text-5xl text-4xl text-white"
-            data-aos="fade-up"
-            data-aos-duration="1200"
+        {/* Kontak Visual Kiri-Kanan */}
+        <div className="grid xl:grid-cols-2 grid-cols-1 items-center gap-10">
+          {/* Teks Kontak Saya */}
+         <div className="text-left" data-aos="fade-right">
+  <h1 className="text-9xl text-orange-600 font-serif leading-snug">
+    Kontak<br />Saya
+  </h1>
+</div>
+
+
+          {/* Daftar Kontak */}
+          <div
+            className="bg-orange-100 p-10 rounded-xl shadow-xl"
+            data-aos="fade-left"
           >
-            <span className="text-yellow-400">Kontak</span> Kami
-          </h1>
-          <p
-            className="font-semibold text-gray-300 xl:mt-5 mt-3 text-2xl text-justify"
-            data-aos="fade-up"
-            data-aos-duration="1400"
-          >
-            Punya pertanyaan, saran, atau butuh bantuan? Tim Todo Bee siap
-            membantumu! Jangan ragu untuk menghubungi kami melalui kontak
-            berikut. Kami ingin mendengar darimu.
-          </p>
+            <ul className="text-orange-600 text-xl space-y-4 font-[Offside]">
+              <li className="flex justify-between">
+                <span>• Email</span> <span>: Abdukkhofath@gmail.com</span>
+              </li>
+              <li className="flex justify-between">
+                <span>• WhatsApp</span> <span>: 0857 2335 5381</span>
+              </li>
+              <li className="flex justify-between">
+                <span>• Instagram</span> <span>: @goendelzn_</span>
+              </li>
+              <li className="flex justify-between ">
+                <span>• X</span> <span>: dadangruhay_</span>
+              </li>
+              <li className="flex justify-between">
+                <span>• Github</span> <span>: abdoellz</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="grid xl:grid-cols-3 grid-cols-1 mt-24 xl:space-x-10 xl:space-y-0 space-y-7">
-        <div
-          className="bg-gray-900 shadow-lg py-15 rounded-2xl "
-          data-aos="fade-up"
-        >
-          <h1 className="text-5xl text-center text-white">
-            <i className="fa-solid fa-phone"></i>
-          </h1>
-          <h1 className="text-2xl font-semibold text-center text-white mt-5">
-            WhatsApp
-          </h1>
-          <h1 className="text-2xl font-semibold text-center text-white mt-3">
-            0872 9821 1098
-          </h1>
-        </div>
-        <div
-          className="bg-gray-900 shadow-lg py-15 rounded-2xl"
-          data-aos="fade-up"
-          data-aos-duration="1200"
-        >
-          <h1 className="text-5xl text-center text-white">
-            <i className="fa-solid fa-envelope"></i>
-          </h1>
-          <h1 className="text-2xl font-semibold text-center text-white mt-5">
-            Email
-          </h1>
-          <h1 className="text-2xl font-semibold text-center text-white mt-3">
-            todobee@email.com
-          </h1>
-        </div>
-        <div
-          className="bg-gray-900 shadow-lg py-15 rounded-2xl"
-          data-aos="fade-up"
-          data-aos-duration="1400"
-        >
-          <h1 className="text-5xl text-center text-white">
-            <i className="fa-solid fa-location-dot"></i>
-          </h1>
-          <h1 className="text-2xl font-semibold text-center text-white mt-5">
-            Lokasi
-          </h1>
-          <h1 className="text-2xl font-semibold text-center text-white mt-3">
-            Kota Sukabumi
-          </h1>
-        </div>
-      </div>
-      </div>
-      <div className="pt-20">
+
+      {/* MAP */}
+        {/* <h1
+                className="font-michroma font-bold text-5xl xl:text-6xl text-orange-600 drop-shadow-md text-center"
+                data-aos="fade-down"
+              >
+                FocusPlan.
+              </h1> */}
+      {/* <div className="pt-10 pb-20 px-6 xl:px-60">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.5495115589295!2d106.92013712615166!3d-6.915432129213436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6849d234eb57e1%3A0x63a7feb68b88d92d!2sDAPUR%20MUNGIL%20PUSAT!5e0!3m2!1sid!2sid!4v1751924156507!5m2!1sid!2sid"
           width="100%"
@@ -87,7 +55,7 @@ function Contact() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-      </div>
+      </div> */}
     </div>
   );
 }
